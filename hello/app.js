@@ -3,12 +3,15 @@
  * Module dependencies.
  */
 
+
+
 var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var hello = require('./routes/hello');
+
 
 var app = express();
 
@@ -32,10 +35,16 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+
+
 // Add routes here
 app.get('/', hello.view);
 
+
+
 app.get('/hello/:userName', hello.view);
+
+
 
 // Example route
 // app.get('/users', user.list);
